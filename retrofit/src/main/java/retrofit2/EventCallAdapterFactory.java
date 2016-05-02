@@ -34,13 +34,13 @@ final class EventCallAdapterFactory extends CallAdapter.Factory {
 
   @Override @Streaming
   public CallAdapter<Call<?>> get(Type returnType, Annotation[] annotations, Retrofit retrofit) {
-    if (getRawType(returnType) != EventCall.class) {
+    if (getRawType(returnType) != Call.class) {
       return null;
     }
     // Kyler Conena
     // Comp490
     final Type responseType = Utils.getCallResponseType(returnType);
-    converter = retrofit.responseBodyConverter(responseType, annotations);
+    //converter = retrofit.responseBodyConverter(responseType, annotations);
     return new CallAdapter<Call<?>>() {
       @Override @Streaming public Type responseType() {
         return responseType;
