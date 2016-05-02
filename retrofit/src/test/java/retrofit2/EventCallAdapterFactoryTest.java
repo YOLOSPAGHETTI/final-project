@@ -87,7 +87,24 @@ public final class EventCallAdapterFactoryTest {
     assertThat(call.execute()).isSameAs(response);
   }
   
+  /*@Test public void hasConverter() {
+  EventCall<String> call = (EventCall<String>) adapter.adapt(new EmptyCall() {
+      @Override public Response<String> execute() throws IOException {
+        return response;
+      }
+    });
+    assertThat(call.getConverter()).isEqualTo(new TypeToken<Converter<?, ResponseBody>() {}.getType());
+  }
   
+  @Test public void isStri() {
+   EventCall<String> call = (EventCall<String>) adapter.adapt(new EmptyCall() {
+      @Override public Response<String> execute() throws IOException {
+        return response;
+      }
+    });
+    assertThat(response.isEqualTo(new String {}.getType());
+  }
+  */
 
   @Test public void adaptedCallEnqueueUsesExecutorForSuccessCallback() {
     Type returnType = new TypeToken<Call<String>>() {}.getType();
